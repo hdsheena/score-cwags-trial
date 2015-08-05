@@ -1,3 +1,4 @@
+#Printed via bash with 'python program.py > debug.txt'
 {u'Handler': u'', u'Registration Number': u''}
 {u'Handler': u'jan wherly', u'Registration Number': u'15-0869-02'}
 {u'Handler': u'Dana Gallagher', u'Registration Number': u'14-1111-11'}
