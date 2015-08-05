@@ -1,0 +1,58 @@
+>>> import docx
+>>> document = Document('docs/R6L2.docx')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Document' is not defined
+>>> from docx import Document
+>>> document = Document('docs/R6L2.docx')
+>>> document
+<docx.document.Document object at 0xb67c4e64>
+>>> document[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'Document' object does not support indexing
+>>> document.core_properties
+<docx.opc.coreprops.CoreProperties object at 0xb681c50c>
+>>> properties = document.core_properties
+>>> document.tables
+[<docx.table.Table object at 0xb67e3b8c>, <docx.table.Table object at 0xb67e3bcc>, <docx.table.Table object at 0xb67e3bec>, <docx.table.Table object at 0xb67e3c0c>]
+>>> for table in document.tables:
+...     print table
+... 
+<docx.table.Table object at 0xb67c6dec>
+<docx.table.Table object at 0xb67e3bac>
+<docx.table.Table object at 0xb67e3c6c>
+<docx.table.Table object at 0xb67e3c8c>
+>>> document.tables[1]
+<docx.table.Table object at 0xb67e3ccc>
+>>> document.tables[1].row_cells(1)
+[<docx.table._Cell object at 0xb67e3e4c>, <docx.table._Cell object at 0xb67e3e4c>, <docx.table._Cell object at 0xb67e3e4c>, <docx.table._Cell object at 0xb67e3e4c>, <docx.table._Cell object at 0xb67e3e4c>, <docx.table._Cell object at 0xb67e3ecc>, <docx.table._Cell object at 0xb67e3ecc>, <docx.table._Cell object at 0xb67e3ecc>]
+>>> document.tables[1].row_cells(1)[1]
+<docx.table._Cell object at 0xb676924c>
+>>> document.tables[1].row_cells(1)[1].cell
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: '_Cell' object has no attribute 'cell'
+>>> document.tables[1].row_cells(1)[1].paragraphs
+[<docx.text.paragraph.Paragraph object at 0xb676934c>]
+>>> document.tables[1].row_cells(1)[1].text
+u'Trial Secretary or host must keep original score sheets for one year '
+
+
+
+
+
+
+for table in tables:
+    #try adding to cells
+    table.row_cells(0)[0].text = "THIS IS NEW TeXT"
+    print table.row_cells(0)[0].text
+
+
+
+@property
+    def _index(self):
+        """
+        Index of this row in its table, starting from zero.
+        """
+        return self._tr.tr_idx
