@@ -1,3 +1,5 @@
+#Reads the test document to identify columns.
+
 from docx import Document
 
 file = Document('July 31 Results TESTFORPYTHON.docx')
