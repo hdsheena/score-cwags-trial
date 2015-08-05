@@ -1,3 +1,5 @@
+#Just some reference code
+
 >>> import docx
 >>> document = Document('docs/R6L2.docx')
 Traceback (most recent call last):
