@@ -1,3 +1,5 @@
+#This file was the first attempt at getting cell data from the docx file.
+
 from docx import Document
 file = Document('July 31 Results.docx')
 
