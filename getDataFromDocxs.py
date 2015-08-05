@@ -1,3 +1,5 @@
+#gets and manipulates data in docX file. Doesn't work quite right.
+
 from docx import Document
 import json
 
